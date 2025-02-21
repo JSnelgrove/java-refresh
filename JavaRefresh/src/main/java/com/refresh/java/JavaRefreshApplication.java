@@ -1,4 +1,4 @@
-package com.refresh.java.JavaRefresh;
+package com.refresh.java;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

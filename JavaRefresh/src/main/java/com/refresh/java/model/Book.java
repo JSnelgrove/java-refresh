@@ -1,18 +1,18 @@
 package com.refresh.java.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import java.time.LocalDate;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 
 @Entity
 public class Book{
-    @ID
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String title;
     private String author;
     private int isbn;
@@ -20,7 +20,7 @@ public class Book{
 
     public Book(){}
 
-    public Book(long id, String title,String author, int isbn, LocalDate publishedDate){
+    public Book(Long id, String title,String author, int isbn, LocalDate publishedDate){
         this.id= id;
         this.title = title;
         this.author= author;
@@ -28,11 +28,11 @@ public class Book{
         this.publishedDate= publishedDate;
     }   
 
-    public long getID(){
+    public Long getID(){
         return this.id;
     }
 
-    public void setID(long id){
+    public void setID(Long id){
         this.id = id;
     }
 
@@ -52,11 +52,11 @@ public class Book{
         this.author = author;
     }
 
-    public int getISBN(){
+    public int getIsbn(){
         return this.isbn;
     }
 
-    public void setISBN(int isbn){
+    public void setIsbn(int isbn){
         this.isbn = isbn;
     }   
 
@@ -64,8 +64,8 @@ public class Book{
         return this.publishedDate;
     }
 
-    public void setPublishedDate(int publishedDate){
-        this.isbn = isbn;
+    public void setPublishedDate(LocalDate publishedDate){
+        this.publishedDate =publishedDate;
     }   
     
     public String toString(){

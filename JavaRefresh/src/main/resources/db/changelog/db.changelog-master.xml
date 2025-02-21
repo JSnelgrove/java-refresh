@@ -1,0 +1,15 @@
+<changeSet id="1" author="yourname">
+    <createTable tableName="book">
+        <column name="id" type="BIGINT" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="title" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="author" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="isbn" type="VARCHAR(50)"/>
+        <column name="published_date" type="DATE"/>
+    </createTable>
+</changeSet>
