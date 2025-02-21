@@ -1,23 +1,26 @@
+package com.refresh.java.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 
 @Entity
 public class Book{
-    
-    int id;
-    String title;
-    String author;
-    int isbn;
-    Date publishedDate;
+    @ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String title;
+    private String author;
+    private int isbn;
+    private LocalDate publishedDate;
 
     public Book(){}
 
-    public Book(int id, String title,String author, int isbn, Date publishedDate){
+    public Book(long id, String title,String author, int isbn, LocalDate publishedDate){
         this.id= id;
         this.title = title;
         this.author= author;
@@ -25,11 +28,11 @@ public class Book{
         this.publishedDate= publishedDate;
     }   
 
-    public int getID(){
+    public long getID(){
         return this.id;
     }
 
-    public void setID(int id){
+    public void setID(long id){
         this.id = id;
     }
 
@@ -54,6 +57,14 @@ public class Book{
     }
 
     public void setISBN(int isbn){
+        this.isbn = isbn;
+    }   
+
+    public LocalDate getPublishedDate(){
+        return this.publishedDate;
+    }
+
+    public void setPublishedDate(int publishedDate){
         this.isbn = isbn;
     }   
     
